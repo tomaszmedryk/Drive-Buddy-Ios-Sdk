@@ -16,7 +16,7 @@ import Foundation
     func driveBuddyNeedsMotionPermission()
 }
 
-public enum DriveBuddyAuthenticationStatus{
+@objc public enum DriveBuddyAuthenticationStatus: Int{
     case NotAuthenticated
     case PendingAuthentication
     case Authenticated
@@ -32,7 +32,7 @@ public class DriveBuddy: NSObject{
     }
     @objc public class func deauthenticate(_ callback:@escaping () -> ()){
     }
-    @objc public class func getAuthenticationStatus()->DriveBuddyAuthenticationStatus{
+    @objc public class func getAuthenticationStatus() -> DriveBuddyAuthenticationStatus{
         return DriveBuddyAuthenticationStatus.NotAuthenticated
     }
 
